@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksaayush-ce2e"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksaayush-ce2e"
+  template:
+    metadata:
+      labels:
+        app: "aksaayush-ce2e"
+    spec:
+      containers:
+        - name: "aksaayush-ce2e"
+          image: "aayushcontainerreg.azurecr.io/aksaayush"
+          ports:
+          - containerPort: 80
